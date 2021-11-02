@@ -8,19 +8,20 @@ public class givesOrder : MonoBehaviour
 
     [SerializeField] GameObject Worm, Tentacle, Bat, Eye, Mushroom, Image;//imagenes de los ingredientes
     [SerializeField] Transform Pos1, Pos2, Pos3;//posiciones en el canvas
+    Timer timer;
     int rng;
-    public double clientTimer;
+
     GameObject[] ingredients = new GameObject[5];
     public GameObject[] randomIngredients = new GameObject[3];
     Transform[] positions = new Transform[3];//posiciones en el canvas
     int[] arrayNumbers = new int[3];//arreglo de numeros aleatorios
     GameObject clone1, clone2, clone3;//clones de las imagenes individuales
-    [SerializeField] Text timer;//timer del cliente
-    int temp = 0;
-    void Update() {
-        temp = 15-(int)clientTimer;
-        timer.text = "Time:" + temp;
+    private void Awake()
+    {
+        timer = FindObjectOfType<Timer>();
     }
+
+
     void Start() {
         
         Image.SetActive(false);
@@ -79,12 +80,6 @@ public class givesOrder : MonoBehaviour
         }
     }
 
-    public void OnTriggerStay(Collider other) {//se empieza a contar el tiempo que el cliente esta esperando 
-        if (other.gameObject.CompareTag("Client")) {
-            clientTimer += Time.deltaTime;
-            
-        }
-    }
     void OnTriggerExit(Collider client) {
         if (client.gameObject.CompareTag("Client")) {//se desactivan las tres imagenes
             for(int i =0; i < 3; i++)
@@ -96,7 +91,7 @@ public class givesOrder : MonoBehaviour
             if (randomIngredients[0] == randomIngredients[1]) Destroy(clone1);
             if (randomIngredients[1] == randomIngredients[2]) Destroy(clone2);
             if (randomIngredients[0] == randomIngredients[2]) Destroy(clone3);
-            clientTimer = 0;//se resetea el timer cuando sale el cliente
+            timer.timeSustract = 0;//se resetea el timer cuando sale el cliente
         }
     }
 }

@@ -64,7 +64,7 @@ public class delivery : MonoBehaviour
         cond1 = true;
         potion.transform.SetParent(positionDelivery.transform);//sa hace hijo de la piscina de objetos
         potion.transform.position = positionDelivery.transform.position;
-        pickup.count = 0;
+        pickup.Already = true;
         for(int i = 2; i >= 0; i--)
         {
             boiler.ingredients2.RemoveAt(i);

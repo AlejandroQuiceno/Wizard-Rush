@@ -13,6 +13,7 @@ TagManager:
   - Tentacle
   - Music
   - TenseMusic
+  - PickUp
   layers:
   - Default
   - TransparentFX

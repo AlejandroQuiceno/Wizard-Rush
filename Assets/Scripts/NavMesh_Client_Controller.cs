@@ -6,11 +6,11 @@ public class NavMesh_Client_Controller : MonoBehaviour {
     [SerializeField] GameObject destination;
     [SerializeField] GameObject destination2;
     [SerializeField] NavMeshAgent client;
-    [SerializeField] int limitTime;
+    [SerializeField] TimeEvents timeEvents;
     Transform destinationTransform;
     Transform destination2Transform;
     AudioSource[] steps = new AudioSource[2];
-    givesOrder givesOrder;
+    Timer givesOrder;
     Animator clientAnimator;
     delivery clientDelivery;
     [SerializeField] bool arrival = false;//se activa cuando llego al destino
@@ -26,8 +26,16 @@ public class NavMesh_Client_Controller : MonoBehaviour {
         destination2Transform = destination2.GetComponent<Transform>();
         clientAnimator = GetComponent<Animator>();
         steps = GetComponents<AudioSource>();
-        givesOrder = FindObjectOfType<givesOrder>();
+        givesOrder = FindObjectOfType<Timer>();
         clientDelivery = FindObjectOfType<delivery>();
+    }
+    private void OnEnable()
+    {
+        timeEvents._TimeOut += LimitTime;
+    }
+    private void OnDisable()
+    {
+        timeEvents._TimeOut -= LimitTime;
     }
     public void Start() {
         if (transform.position.y <= -30) {
@@ -56,14 +64,15 @@ public class NavMesh_Client_Controller : MonoBehaviour {
         if ((delivered==1 && arrival==true)) {//lo que pasa es que le pone un nuevo destino al cliente
           clientAnimator.SetBool("Walking", true);
           client.SetDestination(destination2Transform.position);               
-        } else if (givesOrder.clientTimer >= 15f && arrival == true ) {//si el tiempo es mayor 
-            LimitTime();
+        } else if (givesOrder.timeSustract >= 14.5f && arrival == true ) {//si el tiempo es mayor 
+            timeEvents.timeOut();
         }
         if (Mathf.Abs(transform.position.x - destination2Transform.position.x) <= 0.05f) {//cuando ha llegado al nuevo destino
             Destroy(gameObject);
             
         }
     }
+    
     void ConditionFirst() {//apaga los sonidos y la animacion 
         clientAnimator.SetBool("Walking", false);
         arrival = true;

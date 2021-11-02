@@ -942,7 +942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: {fileID: 1368224196}
-  count: 0
+  Already: 0
 --- !u!114 &203379674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2494,6 +2494,12 @@ PrefabInstance:
       propertyPath: client
       value: 
       objectReference: {fileID: 1618289749}
+    - target: {fileID: 4933443677953147012, guid: f6d1ba0db7b308d42bdf77bb1587f4a3,
+        type: 3}
+      propertyPath: timeEvents
+      value: 
+      objectReference: {fileID: 11400000, guid: 60d67bfe5da2520459eb705611185457,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6d1ba0db7b308d42bdf77bb1587f4a3, type: 3}
 --- !u!1 &433678091
@@ -2943,6 +2949,12 @@ PrefabInstance:
       propertyPath: client
       value: 
       objectReference: {fileID: 2031626560}
+    - target: {fileID: 8510224888144337140, guid: b9684b90c6575f041a55c0706b89ecec,
+        type: 3}
+      propertyPath: timeEvents
+      value: 
+      objectReference: {fileID: 11400000, guid: 60d67bfe5da2520459eb705611185457,
+        type: 2}
     - target: {fileID: 8510224888144337141, guid: b9684b90c6575f041a55c0706b89ecec,
         type: 3}
       propertyPath: m_Speed
@@ -4436,9 +4448,10 @@ GameObject:
   - component: {fileID: 867870055}
   - component: {fileID: 867870054}
   - component: {fileID: 867870053}
+  - component: {fileID: 867870057}
   m_Layer: 0
   m_Name: Box (4)
-  m_TagString: Eye
+  m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4530,6 +4543,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 867870051}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &867870057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867870051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb781d05f45399841b329974ea21524e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1368224196}
+  eye: {fileID: 2116038776}
 --- !u!1001 &869144394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4957,9 +4984,10 @@ GameObject:
   - component: {fileID: 996420573}
   - component: {fileID: 996420572}
   - component: {fileID: 996420571}
+  - component: {fileID: 996420575}
   m_Layer: 0
   m_Name: Box
-  m_TagString: Tentacle
+  m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5051,6 +5079,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 996420569}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &996420575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996420569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42bbc55f5bccd9b429c0d39d8432b254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1368224196}
+  tentacle: {fileID: 857686125}
 --- !u!1001 &1024597555
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5681,6 +5723,12 @@ PrefabInstance:
       propertyPath: limitTime
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 708791101243652292, guid: 231a428b51878524e958aa3fbfabe81a,
+        type: 3}
+      propertyPath: timeEvents
+      value: 
+      objectReference: {fileID: 11400000, guid: 60d67bfe5da2520459eb705611185457,
+        type: 2}
     - target: {fileID: 2460820064222131641, guid: 231a428b51878524e958aa3fbfabe81a,
         type: 3}
       propertyPath: m_Enabled
@@ -6371,9 +6419,10 @@ GameObject:
   - component: {fileID: 1260619012}
   - component: {fileID: 1260619011}
   - component: {fileID: 1260619010}
+  - component: {fileID: 1260619014}
   m_Layer: 0
   m_Name: Box (2)
-  m_TagString: Bat
+  m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6465,6 +6514,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260619008}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1260619014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260619008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db84da9bf8a164040b9208691d72b774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1368224196}
+  bat: {fileID: 99085423}
 --- !u!1001 &1266287322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6631,6 +6694,12 @@ PrefabInstance:
       propertyPath: destination2
       value: 
       objectReference: {fileID: 666362385}
+    - target: {fileID: 8014109061462980681, guid: 2d5e62dde9405264b8939ea1b31c9d54,
+        type: 3}
+      propertyPath: timeEvents
+      value: 
+      objectReference: {fileID: 11400000, guid: 60d67bfe5da2520459eb705611185457,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d5e62dde9405264b8939ea1b31c9d54, type: 3}
 --- !u!1 &1313006466
@@ -6856,12 +6925,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1366003111}
-  - component: {fileID: 1366003117}
-  - component: {fileID: 1366003116}
   - component: {fileID: 1366003115}
   - component: {fileID: 1366003114}
   - component: {fileID: 1366003113}
   - component: {fileID: 1366003112}
+  - component: {fileID: 1366003116}
   m_Layer: 0
   m_Name: Collider (1)
   m_TagString: Bar
@@ -6934,12 +7002,10 @@ MonoBehaviour:
   Pos1: {fileID: 1194719133}
   Pos2: {fileID: 1579271273}
   Pos3: {fileID: 122743694}
-  clientTimer: 0
   randomIngredients:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  timer: {fileID: 1350059464}
 --- !u!65 &1366003115
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6953,53 +7019,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1366003116
-MeshRenderer:
+--- !u!114 &1366003116
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366003110}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &1366003117
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1366003110}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f9c12c1dde5e7a4f83768ac595bffe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerShow: {fileID: 1350059464}
+  TimeEvents: {fileID: 11400000, guid: 60d67bfe5da2520459eb705611185457, type: 2}
+  timeSustract: 0
+  time: 0
 --- !u!1 &1368224196
 GameObject:
   m_ObjectHideFlags: 0
@@ -7993,9 +8028,10 @@ GameObject:
   - component: {fileID: 1678217015}
   - component: {fileID: 1678217014}
   - component: {fileID: 1678217013}
+  - component: {fileID: 1678217017}
   m_Layer: 0
   m_Name: Box (1)
-  m_TagString: MushRoom
+  m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8087,6 +8123,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1678217011}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1678217017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678217011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c81635828517188458a43bf449265367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1368224196}
+  mushroom: {fileID: 2037297767}
 --- !u!1 &1685832301
 GameObject:
   m_ObjectHideFlags: 0
@@ -9029,7 +9079,7 @@ MonoBehaviour:
   m_text: Restart
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9766,9 +9816,10 @@ GameObject:
   - component: {fileID: 2050691600}
   - component: {fileID: 2050691599}
   - component: {fileID: 2050691598}
+  - component: {fileID: 2050691602}
   m_Layer: 0
   m_Name: Box (3)
-  m_TagString: Worm
+  m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9860,6 +9911,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050691596}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2050691602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050691596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f247d63ec10074e4196568ecbd663ba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1368224196}
+  worm: {fileID: 872064648}
 --- !u!1 &2054709351
 GameObject:
   m_ObjectHideFlags: 0

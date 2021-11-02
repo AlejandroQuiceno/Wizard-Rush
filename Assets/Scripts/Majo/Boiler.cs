@@ -43,35 +43,35 @@ public class Boiler : MonoBehaviour
         Worm.transform.SetParent(position2.transform); // hijo de la posicion2
         Worm.transform.position = position2.transform.position;
         count2++;
-        pickup.count = 0;
+        pickup.Already = false;
     }
     void Second() {
         ingredients2.Add(Tentacle);
         Tentacle.transform.SetParent(position2.transform);
         Tentacle.transform.position = position2.transform.position;
         count2++;
-        pickup.count = 0;
+        pickup.Already = false;
     }
     void Third() {
         ingredients2.Add(Bat);
         Bat.transform.SetParent(position2.transform);
         Bat.transform.position = position2.transform.position;
         count2++;
-        pickup.count = 0;
+        pickup.Already = false;
     }
     void Fourth() {
         ingredients2.Add(Mushroom);
         Mushroom.transform.SetParent(position2.transform);
         Mushroom.transform.position = position2.transform.position;
         count2++;
-        pickup.count = 0;
+        pickup.Already = false;
     }
     void Fifth() {
         ingredients2.Add(Eye);
         Eye.transform.SetParent(position2.transform);
         Eye.transform.position = position2.transform.position;
         count2++;
-        pickup.count = 0;
+        pickup.Already = false;
     }
 
     void count() {

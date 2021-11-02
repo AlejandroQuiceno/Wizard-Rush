@@ -40,37 +40,37 @@ public class trash : MonoBehaviour {
     void Worm() {
         worm.transform.SetParent(positionTrash.transform); //se transporte a position.trash
         worm.transform.position = positionTrash.transform.position;
-        pickup.count = 0; //reinicia los objetos para no tomar mas de 3
+        pickup.Already = false; //reinicia los objetos para no tomar mas de 3
         counter.countText = 0; //para que el texto se reinicie que salga press E
     }
     void Mushroom() {
         mushroom.transform.SetParent(positionTrash.transform);
         mushroom.transform.position = positionTrash.transform.position;
-        pickup.count = 0;
+        pickup.Already = false;
         counter.countText = 0;
     }
     void Bat() {
         bat.transform.SetParent(positionTrash.transform);
         bat.transform.position = positionTrash.transform.position;
-        pickup.count = 0;
+        pickup.Already = false;
         counter.countText = 0;
     }
     void Eye() {
         eye.transform.SetParent(positionTrash.transform);
         eye.transform.position = positionTrash.transform.position;
-        pickup.count = 0;
+        pickup.Already = false;
         counter.countText = 0;
     }
     void Tentacle() {
         tentacle.transform.SetParent(positionTrash.transform);
         tentacle.transform.position = positionTrash.transform.position;
-        pickup.count = 0;
+        pickup.Already = false;
         counter.countText = 0;
     }
     void Potion() {
         potion.transform.SetParent(positionTrash.transform);
         potion.transform.position = positionTrash.transform.position;
-        pickup.count = 0;
+        pickup.Already = false;
         counter.countText = 0;
     }
     void OnTriggerExit(Collider other) {

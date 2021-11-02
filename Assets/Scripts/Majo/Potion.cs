@@ -27,7 +27,7 @@ public class Potion : MonoBehaviour
             if ((Input.GetKey(KeyCode.E)) && boil.count2 == 3) {
                 potion2.transform.SetParent(posit1.transform);
                 potion2.transform.localPosition = Vector3.zero;
-                boil.count2 = 0; pickup.count = 1;
+                boil.count2 = 0; pickup.Already = true;
                 ready.Play();
             }
         }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6626195147868313233}
   - component: {fileID: 6626195147868313232}
   - component: {fileID: 6626195147868313239}
+  - component: {fileID: 4729773918027659497}
   m_Layer: 0
   m_Name: tentacle (1)
   m_TagString: Tentacle
@@ -93,3 +94,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.6642647, y: 4.5994687, z: 4.7222385}
   m_Center: {x: -0.00000009934107, y: -0.96760154, z: 2.3904786}
+--- !u!114 &4729773918027659497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6626195147868313237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42bbc55f5bccd9b429c0d39d8432b254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  tentacle: {fileID: 0}

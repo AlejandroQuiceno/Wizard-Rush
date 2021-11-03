@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Counter : MonoBehaviour
+public interface IBoiler 
 {
-     static public int countText = 0;
+    void Cook(Transform position2);
     
 }

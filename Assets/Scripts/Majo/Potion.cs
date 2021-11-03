@@ -11,17 +11,17 @@ public class Potion : MonoBehaviour
     Boiler boil;
     pickup pickup;
     AudioSource ready;
-    Counter counter;
+    Counter Counter;
     void Start() {
         potion.text = "Take Potion";
         boil = FindObjectOfType<Boiler>();
         pickup = FindObjectOfType<pickup>();
-        counter = FindObjectOfType<Counter>();
+        Counter = FindObjectOfType<Counter>();
         ready = GetComponent<AudioSource>();
     }
     void OnTriggerStay(Collider collider) {
-        if (collider.gameObject.CompareTag("Player") && boil.count2==3 && counter.countText == 2) {
-            counter.countText = 3;
+        if (collider.gameObject.CompareTag("Player") && boil.count2==3 && Counter.countText == 2) {
+            Counter.countText = 3;
             boil.boiler.gameObject.SetActive(false); // desaparece presiona e
             potion.gameObject.SetActive(true);// se activa toma la pocion 
             if ((Input.GetKey(KeyCode.E)) && boil.count2 == 3) {

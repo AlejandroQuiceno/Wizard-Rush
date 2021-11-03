@@ -37,7 +37,7 @@ public class delivery : MonoBehaviour
     }
     void OnTriggerStay(Collider collider) {
         coun = 0;
-        if (collider.gameObject.CompareTag("Player") && counter.countText == 3) {
+        if (collider.gameObject.CompareTag("Player") && Counter.countText == 3) {
             poti.potion.gameObject.SetActive(false);// desactivacion de tomar pocion
             deliveryClient.gameObject.SetActive(true);
             
@@ -74,7 +74,7 @@ public class delivery : MonoBehaviour
 
         Debug.Log("coun:"+coun);
         coun = 0; coun2++;
-        counter.countText = 0;
+        Counter.countText = 0;
         
     }
 

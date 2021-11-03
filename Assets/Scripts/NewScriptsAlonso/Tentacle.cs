@@ -2,25 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tentacle : MonoBehaviour, IpickUp 
+public class Tentacle : MonoBehaviour, IpickUp
 {
     // Start is called before the first frame update
-    [SerializeField] GameObject player, tentacle;
-    Counter counter;
-    private void Awake()
-    {
-        counter = FindObjectOfType<Counter>();
-    }
+    [SerializeField] GameObject player, gameObject;
+  
     void pickTentacle()
     {
        
-        tentacle.transform.SetParent(player.transform);
-        tentacle.transform.position = player.transform.position;
-        counter.countText = 1;
+        gameObject.transform.SetParent(player.transform);
+        gameObject.transform.position = player.transform.position;
+        Counter.countText = 1;
     }
 
     public void Interact()
     {
         pickTentacle();
     }
+    
 }

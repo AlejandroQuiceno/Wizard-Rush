@@ -16,7 +16,7 @@ public class boxPickups : MonoBehaviour
         counter = FindObjectOfType<Counter>();
     }
     void OnTriggerEnter(Collider collider) {
-        if (collider.gameObject.CompareTag("Player") && boiler.count2 < 3 && counter.countText == 0 ) { //para que aparezca texto
+        if (collider.gameObject.CompareTag("Player") && boiler.count2 < 3 && Counter.countText == 0 ) { //para que aparezca texto
             boxCollider.gameObject.SetActive(true);
         }
     }

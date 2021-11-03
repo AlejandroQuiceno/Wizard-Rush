@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Counter : MonoBehaviour
+public class CookEye : CookIngredients
 {
-     static public int countText = 0;
-    
+   
+
 }

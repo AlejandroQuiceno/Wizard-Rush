@@ -18,6 +18,9 @@ public class delivery : MonoBehaviour
     public int coun2 = 0;//cuenta las pociones entregadas
     float timer = 0f;
     public bool cond1 = false;
+
+    deliverySubject deliverysubject; //Esta monda es para el patron observer
+    playerMovement pm;
     
     void Start() {
         deliveryClient.text = "Press E for delivery";
@@ -26,6 +29,10 @@ public class delivery : MonoBehaviour
         gives = FindObjectOfType<givesOrder>();
         boiler = FindObjectOfType<Boiler>();
         poti = FindObjectOfType<Potion>();
+
+        deliverysubject = new deliverySubject(this); // esta monda tambien es para el observer
+        pm = GameObject.FindGameObjectWithTag("Player").GetComponent<playerMovement>();
+        deliverysubject.RegisterObserver(pm.playerO);
     }
     void Update() {
         timer += Time.deltaTime;
@@ -52,6 +59,7 @@ public class delivery : MonoBehaviour
                     }
                     if(coun == 3) {
                         ConditionThird();
+                        deliverysubject.NotifyObserver();
                     }
                     
                 }

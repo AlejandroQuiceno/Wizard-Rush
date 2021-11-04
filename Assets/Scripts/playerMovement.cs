@@ -7,12 +7,14 @@ public class playerMovement : MonoBehaviour {
     float magnitude = 5; 
     AudioSource steps;
     Animator animation;
-    
+
+    public PlayerObserver playerO;
 
     void Start() {
         steps = GetComponent<AudioSource>(); //audio pasos
         animation = GetComponent<Animator>(); // animacion
-        
+
+        playerO = new PlayerObserver(this);
     }
 
     void Update() {

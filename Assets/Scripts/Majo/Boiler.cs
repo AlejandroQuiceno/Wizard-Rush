@@ -12,14 +12,12 @@ public class Boiler : MonoBehaviour
     [SerializeField] GameObject position, position2; // positon= posicion jugador-- position2 = posicion piscina
     public List<GameObject> ingredients2 = new List<GameObject>(); // lista de los objetos en la pocion
     public int count2 = 0; // cuenta de los ingredientes 
-    pickup pickup;
+    [SerializeField] pickup pickup;
     
     IBoiler iboiler;
 
     void Start() {
         boiler.text = "Press E";
-       
-        pickup = FindObjectOfType<pickup>();
     }
     void OnTriggerStay(Collider collider) {
         if (collider.gameObject.CompareTag("Player") && Counter.countText == 1) {

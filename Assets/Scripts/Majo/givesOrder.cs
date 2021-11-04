@@ -38,14 +38,12 @@ public class givesOrder : MonoBehaviour
         if (box.gameObject.CompareTag("Client")) {
             for (int i = 0; i < 3; i++) {//se crean tres numeros aleatorios y se guardan en el arreglo de numeros aleatorios 
                 rng = Random.Range(0, 5);
-                arrayNumbers[i] = rng;  
-            }           
-            for (int i = 0; i < 3; i++) randomIngredients[i] = ingredients[arrayNumbers[i]];//se ponen ingredientes aleatorios en el arreglo de randomingridients 
-            for (int i = 0; i < 3; i++) {//esta moviendo las imagenes a las 3 posiciones que estan en el canvas, y se estan activando las imagenes 
+                arrayNumbers[i] = rng;
+                randomIngredients[i] = ingredients[arrayNumbers[i]];
                 randomIngredients[i].transform.position = positions[i].position;
                 Image.SetActive(true);
                 randomIngredients[i].SetActive(true);
-            }
+            }           
             if (randomIngredients[0] == randomIngredients[1] && randomIngredients[1] == randomIngredients[2]&& randomIngredients[0] == randomIngredients[2]) {//pasa cuando los tres ingredientes son iguales
                 ConditionFirst();
             } else {//pasa cuando dos ingredienets son iguales 

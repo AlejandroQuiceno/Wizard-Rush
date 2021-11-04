@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Animations;
 
 public class playerMovement : MonoBehaviour {
-    float magnitude = 5; 
+    [SerializeField]float magnitude = 5; 
     AudioSource steps;
     Animator animation;
     
@@ -24,12 +24,13 @@ public class playerMovement : MonoBehaviour {
             angle();
          }
     }
-
+    Vector3 velocity = new Vector3();
+    Vector3 displacement = new Vector3();
     void movimiento() {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-        Vector3 velocity = new Vector3(x, 0, z).normalized * magnitude;
-        Vector3 displacement = velocity * Time.deltaTime; ///para que se desplace en el tiempo
+        velocity.Set(x, 0, z);
+        displacement = velocity.normalized * Time.deltaTime*magnitude; ///para que se desplace en el tiempo
         transform.position += displacement; //cambia la posicion
 
         if (x != 0 || z != 0) {

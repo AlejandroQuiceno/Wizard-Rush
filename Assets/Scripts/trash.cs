@@ -6,14 +6,11 @@ using UnityEngine.UI;
 public class trash : MonoBehaviour {
     [SerializeField] Text trashGame;
     [SerializeField] GameObject positionTrash, position, worm, mushroom, bat, eye, tentacle, potion;
-    pickup pickup;
-    Boiler boiler;
-    Counter Counter; 
+    [SerializeField] pickup pickup;
+    [SerializeField] Boiler boiler;
+    [SerializeField] Counter Counter; 
     void Start() {
         trashGame.text = "Press E for trash";
-        pickup = FindObjectOfType<pickup>();
-        boiler = FindObjectOfType<Boiler>();
-        Counter = FindObjectOfType<Counter>();
     }
 
     void OnTriggerStay(Collider other) {

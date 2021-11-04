@@ -11,10 +11,9 @@ public class Timer : MonoBehaviour
     public double timeSustract;
     public int time;
     // Update is called once per frame
-    void Update()
+    void Start()
     {
-        time = 15 - (int)timeSustract;
-        timerShow.text = ("Time: ") + time;
+        InvokeRepeating("Counter",1f,1f);
     }
     private void OnTriggerStay(Collider other)
     {
@@ -23,5 +22,10 @@ public class Timer : MonoBehaviour
             timeSustract += Time.deltaTime;
             TimeEvents.timeSustract += Time.deltaTime;
         }
+    }
+    void Counter()
+    {
+        time = 15 - (int) timeSustract;
+        timerShow.text = ("Time: ") + time;
     }
 }

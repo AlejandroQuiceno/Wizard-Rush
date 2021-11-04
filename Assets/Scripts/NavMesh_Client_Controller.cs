@@ -13,6 +13,7 @@ public class NavMesh_Client_Controller : MonoBehaviour {
     Timer givesOrder;
     Animator clientAnimator;
     delivery clientDelivery;
+    bool set =false;
     [SerializeField] bool arrival = false;//se activa cuando llego al destino
     int delivered = 0;//es cero cuando no se le ha entregado la orden y uno cuando si 
     
@@ -51,7 +52,7 @@ public class NavMesh_Client_Controller : MonoBehaviour {
         }
     }
     void Update() {
-        if (delivered == 0 && arrival == false) client.SetDestination(destinationTransform.position);
+        if (delivered == 0 && arrival == false && client.enabled) SetDestination();
         if (Mathf.Abs(transform.position.x - destinationTransform.position.x)<=0.5f && arrival == false) {//se calcula si ya llego al primer destino si no esta a menos de medio metro no entra al condicional 
             ConditionFirst();
         }
@@ -72,7 +73,6 @@ public class NavMesh_Client_Controller : MonoBehaviour {
             
         }
     }
-    
     void ConditionFirst() {//apaga los sonidos y la animacion 
         clientAnimator.SetBool("Walking", false);
         arrival = true;
@@ -113,5 +113,12 @@ public class NavMesh_Client_Controller : MonoBehaviour {
                 steps[i].volume = 1;
             }
         }
+    }
+    void SetDestination()
+    {
+        if (!set) {
+            client.SetDestination(destinationTransform.position);
+            set = true;
+        } 
     }
 }

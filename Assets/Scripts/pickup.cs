@@ -7,14 +7,9 @@ public class pickup : MonoBehaviour
    
     [SerializeField] GameObject position;
     public bool Already = false;
-    Boiler boiler;
-    Counter counter;
+    [SerializeField]Boiler boiler;
+    [SerializeField]Counter counter;
 
-
-    private void Start() {
-        boiler = FindObjectOfType<Boiler>();
-        counter = FindObjectOfType<Counter>();
-    }
     void OnTriggerStay(Collider collider) {
         if (collider.gameObject.CompareTag("PickUp") && Input.GetKey(KeyCode.E) && Already==false) {
             var pickUp = collider.GetComponent<IpickUp>();
